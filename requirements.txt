@@ -1,0 +1,12 @@
+pandas>=2.0
+numpy>=1.24
+openpyxl>=3.1
+matplotlib>=3.7
+pyarrow>=14.0
+jupyter
+networkx>=3.2
+pyvis>=0.3.2    # trae vis-network 9.1.2 para los grafos interactivos offline (src/visual.py)
+scipy>=1.11      # opcional: mejores diagramas del grafo (kamada_kawai_layout)
+rdflib>=7.0      # opcional: leer/validar la ontología docs/ontologia_v1.ttl
+mlflow>=2.14     # registro de experimentos (Sprint 3 · MLOps); sin él se usa results/experimentos.jsonl
+pypdf>=4.0       # leer los manuales de alarmas Huawei en PDF (src/manuales.py)

@@ -1,0 +1,17 @@
+# Reglas causa→efecto extraídas de los manuales de alarmas Huawei (etiqueta «plata»). Las lee src/etiquetado.py:cargar_reglas.
+# Una fila por relación. Las líneas que empiezan con # son comentarios y se ignoran.
+#
+# alarma_causa  : alarmName EXACTO como lo entrega el NCE (respetar mayúsculas y espacios).
+# alarma_efecto : alarmName EXACTO de la alarma provocada (o sinónima).
+# relacion      : puedeCausar  -> la causa provoca al efecto (el manual lo lista en "Related alarms" / "Possible causes").
+#                 esSinonimoDe -> mismo evento reportado con otro nombre o por otro protocolo; se tratan como una sola alarma.
+# alcance       : mismo_equipo | extremo_remoto (otro extremo del enlace) | aguas_abajo | vecindad.
+#                 v1: se registra; la regla se aplica dentro del incidente (que ya es una vecindad física de <= 4 saltos).
+# fuente        : manual y sección, p. ej. "RTN 950 Alarm Reference V100R020 · 4.2.15" (obligatorio: trazabilidad).
+# confianza     : alta (el manual lo afirma) | media (el manual lo sugiere) | baja (criterio del NOC, aún sin manual).
+# nota          : opcional.
+# version       : lote de carga (v1-RTN320, v2-routers…). Las reglas no se editan después de ver errores del motor.
+# fecha_carga   : fecha en que se cargó la regla (la llena src/manuales.py:revision_a_reglas).
+#
+# Las filas se cargan SOLO desde la planilla revisada (reports/sprint2/revision_reglas_*.xlsx); no se inventan.
+alarma_causa,alarma_efecto,relacion,alcance,fuente,confianza,nota,version,fecha_carga

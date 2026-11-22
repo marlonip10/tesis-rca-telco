@@ -1,0 +1,5 @@
+{
+  "_comentario": "Plantilla con valores FICTICIOS. Copiar a data/raw/reglas_red.json (no versionado) con los códigos reales confirmados por el NOC.",
+  "enganche_excepciones": { "XX-0001-AD": "XX-0002-TT" },
+  "enlaces_opticos": [["EQUIPO OPTICO A", "EQUIPO OPTICO B"]]
+}

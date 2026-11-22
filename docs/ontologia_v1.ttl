@@ -1,0 +1,70 @@
+@prefix :     <https://tesis-rca-telco/ontologia#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<https://tesis-rca-telco/ontologia> a owl:Ontology ;
+    rdfs:label "Ontología mínima de diagnóstico de causa raíz - red telco Pasco"@es ;
+    owl:versionInfo "v1 (Sprint 2)" .
+
+# ---------------- Clases ----------------
+:Sitio a owl:Class ; rdfs:label "Sitio"@es ;
+    rdfs:comment "Nodo de la red (CODIGO DE NODO de red.xlsx)."@es .
+:SitioTransporte a owl:Class ; rdfs:subClassOf :Sitio .
+:SitioAcceso     a owl:Class ; rdfs:subClassOf :Sitio .
+:SitioExterno    a owl:Class ; rdfs:subClassOf :Sitio ;
+    rdfs:comment "Sitio fuera del inventario, p. ej. RDNFO (Red Dorsal Nacional)."@es .
+
+:Equipo a owl:Class ; rdfs:label "Equipo"@es ;
+    rdfs:comment "Equipo de red (NOMBRE DE EQUIPO EN RED). El puerto no se modela como clase: migra por averías."@es .
+:RouterAcceso           a owl:Class ; rdfs:subClassOf :Equipo .
+:RouterTransporte       a owl:Class ; rdfs:subClassOf :Equipo .
+:RouterAgregacionAcceso a owl:Class ; rdfs:subClassOf :Equipo .
+:EquipoMicroondas       a owl:Class ; rdfs:subClassOf :Equipo ;
+    rdfs:comment "IDU RTN 320; cada uno es un extremo de un enlace de microondas."@es .
+:EquipoOpticoTransporte a owl:Class ; rdfs:subClassOf :Equipo .
+:Sectorial              a owl:Class ; rdfs:subClassOf :Equipo ;
+    rdfs:comment "RTN510_AP hacia clientes finales; fuera del diagnóstico de causa raíz."@es .
+
+:Enlace a owl:Class ; rdfs:label "Enlace"@es .
+:EnlaceMicroondas a owl:Class ; rdfs:subClassOf :Enlace .
+:EnlaceFibra      a owl:Class ; rdfs:subClassOf :Enlace .
+
+:Alarma     a owl:Class ; rdfs:label "Alarma"@es .
+:TipoAlarma a owl:Class ; rdfs:label "Tipo de alarma"@es .
+:Ventana    a owl:Class ; rdfs:label "Ventana de descarga (15 min)"@es .
+
+# ---------------- Relaciones (object properties) ----------------
+:contiene a owl:ObjectProperty ; rdfs:domain :Sitio ; rdfs:range :Equipo .
+:conexionLocal a owl:ObjectProperty, owl:SymmetricProperty ; rdfs:domain :Equipo ; rdfs:range :Equipo ;
+    rdfs:comment "Cableado dentro del sitio: router - IDU, router - sectorial."@es .
+:extremoDe a owl:ObjectProperty ; rdfs:range :Enlace ;
+    rdfs:comment "Equipo (o sitio externo) que es extremo de un enlace."@es .
+:engancha a owl:ObjectProperty ; rdfs:range :RouterTransporte ;
+    rdfs:comment "Conexión de la red de acceso hacia el transporte (hacia el núcleo)."@es .
+:ocurreEn  a owl:ObjectProperty ; rdfs:domain :Alarma ; rdfs:range :Equipo .
+:enVentana a owl:ObjectProperty ; rdfs:domain :Alarma ; rdfs:range :Ventana .
+:esDeTipo  a owl:ObjectProperty ; rdfs:domain :Alarma ; rdfs:range :TipoAlarma .
+:puedeCausar a owl:ObjectProperty ; rdfs:domain :TipoAlarma ; rdfs:range :TipoAlarma ;
+    rdfs:comment "Relación causa-efecto candidata entre tipos de alarma (datos + manuales + experto)."@es .
+:esSinonimoDe a owl:ObjectProperty, owl:SymmetricProperty ; rdfs:domain :TipoAlarma ; rdfs:range :TipoAlarma ;
+    rdfs:comment "Dos nombres para el mismo evento."@es .
+:esCausaRaizDe a owl:ObjectProperty ; rdfs:domain :Alarma ; rdfs:range :Alarma .
+
+# ---------------- Atributos (datatype properties) ----------------
+:codigo    a owl:DatatypeProperty ; rdfs:range xsd:string .
+:nombre    a owl:DatatypeProperty ; rdfs:range xsd:string .
+:red       a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:comment "tx o ax"@es .
+:tipoNodo  a owl:DatatypeProperty ; rdfs:domain :Sitio ; rdfs:range xsd:string .
+:cluster   a owl:DatatypeProperty ; rdfs:range xsd:string .
+:anillo    a owl:DatatypeProperty ; rdfs:range xsd:string .
+:ip        a owl:DatatypeProperty ; rdfs:domain :Equipo ; rdfs:range xsd:string .
+:tipoEquipo a owl:DatatypeProperty ; rdfs:domain :Equipo ; rdfs:range xsd:string .
+:medio     a owl:DatatypeProperty ; rdfs:domain :Enlace ; rdfs:range xsd:string .
+:alarmName a owl:DatatypeProperty ; rdfs:domain :Alarma ; rdfs:range xsd:string .
+:severidad a owl:DatatypeProperty ; rdfs:domain :Alarma ; rdfs:range xsd:integer .
+:firstOccurUtc a owl:DatatypeProperty ; rdfs:domain :Alarma ; rdfs:range xsd:dateTime .
+:arriveUtc a owl:DatatypeProperty ; rdfs:domain :Alarma ; rdfs:range xsd:dateTime .
+:puerto    a owl:DatatypeProperty ; rdfs:domain :Alarma ; rdfs:range xsd:string ;
+    rdfs:comment "Puerto como atributo dinámico de la alarma (moi_puerto)."@es .

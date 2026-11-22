@@ -1,0 +1,15 @@
+{
+  "mejor_referencia": "T0\u2032 \u00b7 severidad",
+  "mcnemar": {
+    "solo_T3": 56,
+    "solo_ref": 0,
+    "p": 0.0
+  },
+  "verdad": "simulacion",
+  "hiperparametros": {
+    "tau": 30.0,
+    "gamma": 0.7,
+    "max_saltos": 8,
+    "direccional": true
+  }
+}

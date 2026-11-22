@@ -1,0 +1,53 @@
+# =====================================================================================
+#  Repositorio PÚBLICO: nada de datos del operador (topología, IPs, nombres de equipos,
+#  alarmas por equipo, credenciales). Todo eso vive solo en la máquina autorizada.
+# =====================================================================================
+
+# --- Datos crudos e intermedios (ventanas JSON del NCE, red.xlsx, reglas_red.json) ---
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.parquet
+*.xlsx
+*.xls
+*.csv.gz
+*.json
+!docs/**/*.json
+!config/*.ejemplo.json
+!results/motor_v1/resumen_motor_v1.json
+
+# --- Salidas generadas con datos del operador (se regeneran con los notebooks) ---
+reports/**/*.html
+reports/**/*.xlsx
+docs/figuras/grafo_*.png
+results/baseline/*.csv
+results/**/ultima_corrida.json
+results/experimentos.jsonl
+
+# --- MLOps: base local de MLflow y modelos entrenados (llevan la topología) ---
+mlruns/
+*.db
+*.pkl
+
+# --- Credenciales y registros del scraping (nunca al repositorio) ---
+.env
+*.log
+logs/
+*credencial*
+*password*
+*token*
+estado*.txt
+
+# --- Python / entorno ---
+__pycache__/
+*.py[cod]
+.venv/
+.ipynb_checkpoints/
+
+# --- SO / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
