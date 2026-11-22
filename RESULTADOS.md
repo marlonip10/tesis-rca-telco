@@ -14,7 +14,8 @@
 |---|---|
 | Descargas del gestor NCE analizadas | 313 ventanas (2 al 15 de octubre de 2026) |
 | Alarmas de red (sin radios hacia clientes) | 51 533 |
-| Incidentes delimitados (alarmas nuevas conectadas, ≤ 4 saltos, ≥ 3 alarmas) | 79 (1 129 alarmas) |
+| Alarmas nuevas / reaparecidas (crónicas, descartadas) | 1 346 / 538 |
+| Incidentes delimitados (alarmas nuevas conectadas, ≤ 4 saltos, ≥ 3 alarmas) | 44 (697 alarmas; 43 de transporte y 1 de acceso) |
 | Grafo de conocimiento | 1 184 nodos, 1 586 relaciones, un componente conectado |
 | Ontología v1 | 17 clases, 10 propiedades de objeto, 14 de datos |
 
@@ -44,11 +45,15 @@ Detalle por partición: [`results/motor_v1/`](results/motor_v1/).
 
 | Par causa → efecto | α |
 |---|---|
-| ETH_LOS → Link Down | 1,37 |
-| REMOTE_FAULT → MUT_LOS | 1,02 |
-| Local Fault Alarm → IS-IS Adjacency Changed | 0,96 |
-| Interface changed to suppressed → BFD session down | 0,96 |
-| Physical Port Down → Link Down | 0,72 |
+| Local Fault Alarm → Interface IPv6 status changed | 1,27 |
+| L3VPN VRF Down → Bgp Peer Backward Transition | 1,12 |
+| R_LOS → MUT_LOS | 0,96 |
+| Interface IPv6 status changed → IS-IS Adjacency Changed | 0,90 |
+| Alarm of failed LAG negotiation → Alarm that all LAG bandwidth is lost | 0,88 |
+| NE_NOT_LOGIN → NE_COMMU_BREAK | 0,76 |
+
+Versión v0.2c, ejecutada en la máquina del operador el 22-nov-2026; los resultados de la simulación coinciden exactamente
+con los del entorno de desarrollo.
 
 ## Limitaciones y próximos pasos
 
