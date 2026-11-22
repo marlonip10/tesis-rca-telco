@@ -1,45 +1,39 @@
 alarmName,alarmas,pct,pct_acumulado,en_manual,con_regla,roles
-BGP Status Changed,255,0.2259,0.2259,False,False,"router_acceso, router_agregacion_acceso, router_transporte"
-Link Down,140,0.124,0.3499,False,False,"router_agregacion_acceso, router_transporte"
-Bgp Peer Backward Transition,126,0.1116,0.4615,False,False,"router_acceso, router_agregacion_acceso, router_transporte"
-The Device is offline,83,0.0735,0.535,False,False,"router_acceso, router_transporte"
-Physical Port Down,67,0.0593,0.5943,False,False,router_transporte
-NE Software Management - Automatic Backup operation failed,42,0.0372,0.6315,False,False,microondas
-IS-IS Adjacency Changed,38,0.0337,0.6652,False,False,"router_agregacion_acceso, router_transporte"
-ETH_LOS,37,0.0328,0.698,True,False,router_transporte
-Interface IPv6 status changed,33,0.0292,0.7272,False,False,router_transporte
-CLK_NO_TRACE_MODE,28,0.0248,0.752,True,False,microondas
-NE_NOT_LOGIN,24,0.0213,0.7733,False,False,"microondas, optico_transporte"
-NE_COMMU_BREAK,24,0.0213,0.7946,False,False,"microondas, optico_transporte"
-GNE_CONNECT_FAIL,24,0.0213,0.8159,False,False,"microondas, optico_transporte"
-The alarm of copper negotiation rate fall down,23,0.0204,0.8363,False,False,router_transporte
-Eth Half Duplex,19,0.0168,0.8531,False,False,router_transporte
-BFD session down,16,0.0142,0.8673,False,False,"router_acceso, router_agregacion_acceso, router_transporte"
-MPLS LDP Session Down,16,0.0142,0.8815,False,False,router_transporte
-LAN_LOC,10,0.0089,0.8904,False,False,optico_transporte
-Eth-Trunk Member Down,10,0.0089,0.8993,False,False,router_transporte
-Alarm of failed LAG negotiation,10,0.0089,0.9082,False,False,router_transporte
-Alarm that all LAG bandwidth is lost,10,0.0089,0.9171,False,False,router_transporte
-Lacp State Down,10,0.0089,0.926,False,False,router_transporte
-Security Risk Alarm,10,0.0089,0.9349,False,False,router_transporte
-CF Card Usage Over the Pre-set Threshold,8,0.0071,0.942,False,False,"router_acceso, router_transporte"
-L3VPN VRF Down,7,0.0062,0.9482,False,False,"router_agregacion_acceso, router_transporte"
-Board Voltage Below Major Lower Threshold,6,0.0053,0.9535,False,False,router_transporte
-MUT_LOS,6,0.0053,0.9588,False,False,optico_transporte
-IN_PWR_LOW,5,0.0044,0.9632,True,False,optico_transporte
-Radius Server Group Down,5,0.0044,0.9676,False,False,"router_acceso, router_transporte"
-Radius AcctServer Down,5,0.0044,0.972,False,False,"router_acceso, router_transporte"
-IPv6 Status on All Interfaces Bound to a VPN Instance Being Down,4,0.0035,0.9755,False,False,router_transporte
-Device Powered Off,3,0.0027,0.9782,False,False,router_acceso
-Power Fail(Entity),3,0.0027,0.9809,False,False,router_acceso
-Local Fault Alarm,3,0.0027,0.9836,False,False,router_transporte
-R_LOS,3,0.0027,0.9863,True,False,optico_transporte
-REMOTE_FAULT,3,0.0027,0.989,True,False,optico_transporte
-Remote Fault Alarm,3,0.0027,0.9917,False,False,router_transporte
-Performance Warning alarm,2,0.0018,0.9935,False,False,router_acceso
-Board Voltage Below Critical Lower Threshold,2,0.0018,0.9953,False,False,router_transporte
-NTPsynchronizationfailure,2,0.0018,0.9971,False,False,router_transporte
-Card Power Off,1,0.0009,0.998,False,False,router_transporte
-Package Verification Failure,1,0.0009,0.9989,False,False,router_transporte
-Interface changed to suppressed,1,0.0009,0.9998,False,False,router_transporte
-Vty Exceed,1,0.0009,1.0007,False,False,router_transporte
+BGP Status Changed,143,0.2052,0.2052,False,False,router_transporte
+Link Down,127,0.1822,0.3874,False,False,router_transporte
+The Device is offline,80,0.1148,0.5022,False,False,router_transporte
+Physical Port Down,61,0.0875,0.5897,False,False,router_transporte
+ETH_LOS,36,0.0516,0.6413,True,False,router_transporte
+Interface IPv6 status changed,32,0.0459,0.6872,False,False,router_transporte
+IS-IS Adjacency Changed,31,0.0445,0.7317,False,False,router_transporte
+The alarm of copper negotiation rate fall down,23,0.033,0.7647,False,False,router_transporte
+MPLS LDP Session Down,16,0.023,0.7877,False,False,router_transporte
+Bgp Peer Backward Transition,15,0.0215,0.8092,False,False,router_transporte
+Eth Half Duplex,15,0.0215,0.8307,False,False,router_transporte
+Eth-Trunk Member Down,10,0.0143,0.845,False,False,router_transporte
+Alarm of failed LAG negotiation,10,0.0143,0.8593,False,False,router_transporte
+Alarm that all LAG bandwidth is lost,10,0.0143,0.8736,False,False,router_transporte
+Lacp State Down,10,0.0143,0.8879,False,False,router_transporte
+Security Risk Alarm,10,0.0143,0.9022,False,False,router_transporte
+BFD session down,7,0.01,0.9122,False,False,router_transporte
+NE Software Management - Automatic Backup operation failed,6,0.0086,0.9208,False,False,microondas
+Board Voltage Below Major Lower Threshold,6,0.0086,0.9294,False,False,router_transporte
+MUT_LOS,6,0.0086,0.938,False,False,optico_transporte
+L3VPN VRF Down,4,0.0057,0.9437,False,False,router_transporte
+IPv6 Status on All Interfaces Bound to a VPN Instance Being Down,4,0.0057,0.9494,False,False,router_transporte
+LAN_LOC,3,0.0043,0.9537,False,False,optico_transporte
+Local Fault Alarm,3,0.0043,0.958,False,False,router_transporte
+R_LOS,3,0.0043,0.9623,True,False,optico_transporte
+REMOTE_FAULT,3,0.0043,0.9666,True,False,optico_transporte
+NE_NOT_LOGIN,3,0.0043,0.9709,False,False,optico_transporte
+NE_COMMU_BREAK,3,0.0043,0.9752,False,False,optico_transporte
+GNE_CONNECT_FAIL,3,0.0043,0.9795,False,False,optico_transporte
+Remote Fault Alarm,3,0.0043,0.9838,False,False,router_transporte
+Board Voltage Below Critical Lower Threshold,2,0.0029,0.9867,False,False,router_transporte
+CF Card Usage Over the Pre-set Threshold,2,0.0029,0.9896,False,False,router_transporte
+NTPsynchronizationfailure,2,0.0029,0.9925,False,False,router_transporte
+Card Power Off,1,0.0014,0.9939,False,False,router_transporte
+Package Verification Failure,1,0.0014,0.9953,False,False,router_transporte
+Interface changed to suppressed,1,0.0014,0.9967,False,False,router_transporte
+IN_PWR_LOW,1,0.0014,0.9981,True,False,optico_transporte
+Vty Exceed,1,0.0014,0.9995,False,False,router_transporte

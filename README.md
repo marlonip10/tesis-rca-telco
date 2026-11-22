@@ -6,36 +6,36 @@ Repositorio de trabajo de la tesis. Metodología **CRISP-DM**, organizada por sp
 
 ## Estructura del repositorio
 
-Leyenda: ✅ se publica en GitHub · 🔒 solo en la máquina autorizada (datos del operador, no se versiona)
+Leyenda: ✓ se publica en GitHub · X solo en la máquina autorizada (datos del operador, no se versiona)
 
 ```
 tesis-rca-telco/
-├── README.md            ✅ este archivo
-├── RESULTADOS.md        ✅ resumen público de resultados del motor v1 (cifras agregadas y gráficos)
-├── requirements.txt     ✅ librerías de Python
-├── .gitignore           ✅ reglas de lo que NO se sube
+├── README.md            ✓ este archivo
+├── RESULTADOS.md        ✓ resumen público de resultados del motor v1 (cifras agregadas y gráficos)
+├── requirements.txt     ✓ librerías de Python
+├── .gitignore           ✓ reglas de lo que NO se sube
 ├── config/
-│   └── reglas_red.ejemplo.json   ✅ plantilla con valores ficticios de reglas_red.json
-├── data/                🔒 nada de esta carpeta se publica (solo los .gitkeep)
-│   ├── raw/             🔒 ventanas DD_MM_AAAA_HH_MM_SS/*.json + red.xlsx + reglas_red.json
-│   ├── interim/         🔒 intermedios + etiquetas oro devueltas por el NOC (oro_noc_completada.xlsx)
-│   └── processed/       🔒 salidas regenerables: dataset_consolidado.*, alarmas_sectoriales.csv, grafo_v1.*
-├── notebooks/           ✅ sin salidas (nbstripout) · 01 ingesta · 02 EDA · 03 baseline · 04 grafo
+│   └── reglas_red.ejemplo.json   ✓ plantilla con valores ficticios de reglas_red.json
+├── data/                X nada de esta carpeta se publica (solo los .gitkeep)
+│   ├── raw/             X ventanas DD_MM_AAAA_HH_MM_SS/*.json + red.xlsx + reglas_red.json
+│   ├── interim/         X intermedios + etiquetas oro devueltas por el NOC (oro_noc_completada.xlsx)
+│   └── processed/       X salidas regenerables: dataset_consolidado.*, alarmas_sectoriales.csv, grafo_v1.*
+├── notebooks/           ✓ sin salidas (nbstripout) · 01 ingesta · 02 EDA · 03 baseline · 04 grafo
 │                        #   05 etiquetado y validación · 06 features · 07 motor v1 + resultados por fold
-├── src/                 ✅ ingesta.py · baseline.py · grafo.py · visual.py (grafos interactivos)
+├── src/                 ✓ ingesta.py · baseline.py · grafo.py · visual.py (grafos interactivos)
 │                        #   etiquetado.py (incidentes, plata/oro) · evaluacion.py (folds, métricas)
 │                        #   sintetico.py (avalanchas simuladas) · manuales.py (reglas desde PDF Huawei)
 │                        #   features.py · motor.py (Hawkes topológico) · tracking.py (MLflow)
-├── docs/                ✅ entregables (Markdown) + ontología (.ttl) + catálogo y reglas de los manuales (.csv)
-│   ├── figuras/         🔒 figuras con la topología (grafo_*.png)
-│   └── figuras_publicas/ ✅ figuras sin datos de la red (arquitectura, metodología, resultados simulados)
-├── reports/             🔒 vistas interactivas (.html), planillas (.xlsx) y demos por sprint
+├── docs/                ✓ entregables (Markdown) + ontología (.ttl) + catálogo y reglas de los manuales (.csv)
+│   ├── figuras/         X figuras con la topología (grafo_*.png)
+│   └── figuras_publicas/ ✓ figuras sin datos de la red (arquitectura, metodología, resultados simulados)
+├── reports/             X vistas interactivas (.html), planillas (.xlsx) y demos por sprint
 │   ├── sprint1/
 │   └── sprint2/
 ├── results/
-│   ├── baseline/        🔒 rankings por ventana (listan equipos)
-│   └── motor_v1/        ✅ métricas por partición de la simulación (resumen_*.csv, resumen_motor_v1.json)
-└── mlruns/              🔒 base local de MLflow y modelos .pkl: `mlflow ui --backend-store-uri sqlite:///mlruns/mlflow.db`
+│   ├── baseline/        X rankings por ventana (listan equipos)
+│   └── motor_v1/        ✓ métricas por partición de la simulación (resumen_*.csv, resumen_motor_v1.json)
+└── mlruns/              X base local de MLflow y modelos .pkl: `mlflow ui --backend-store-uri sqlite:///mlruns/mlflow.db`
 ```
 
 ## Reglas de versionado (importante)
